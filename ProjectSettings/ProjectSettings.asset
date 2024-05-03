@@ -753,11 +753,11 @@ PlayerSettings:
   apiCompatibilityLevel: 3
   activeInputHandler: 1
   windowsGamepadBackendHint: 0
-  cloudProjectId: d61f5203-930b-4cc2-83f1-8bc3588d181e
+  cloudProjectId: 
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: My-Driver-Academia
-  organizationId: mkt-games
+  projectName: 
+  organizationId: 
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}

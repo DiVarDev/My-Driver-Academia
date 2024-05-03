@@ -44,24 +44,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Brake"",
-                    ""type"": ""Button"",
-                    ""id"": ""b9a9877e-78d7-4347-83fe-b721e905fb21"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Throttle"",
-                    ""type"": ""Button"",
-                    ""id"": ""1ac2226a-33c5-4ce0-974c-5f9dfa2f2fac"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -77,8 +59,30 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""left"",
+                    ""name"": ""up"",
                     ""id"": ""d2b2df78-6bfc-4f3c-a059-15055697a6cb"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""ddd63799-966e-4816-a5c8-b0109da3255f"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""874ec1df-3aa3-4d64-956e-696546f6500d"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -99,8 +103,30 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""left"",
+                    ""name"": ""up"",
                     ""id"": ""b1a4e392-5e44-4a19-8906-c9a2affac984"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""b0ccb961-59ac-495b-a91c-3f6ce90f34f7"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""e6a759a5-1394-4e19-873a-46ad3dc6f940"",
                     ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -130,28 +156,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Handbrake"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""aa950cd8-98a2-4632-86d6-b586e171d209"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Brake"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""fda0491a-ebaf-4004-b557-ac14a4d54496"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Throttle"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -162,8 +166,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_Driver = asset.FindActionMap("Driver", throwIfNotFound: true);
         m_Driver_Movement = m_Driver.FindAction("Movement", throwIfNotFound: true);
         m_Driver_Handbrake = m_Driver.FindAction("Handbrake", throwIfNotFound: true);
-        m_Driver_Brake = m_Driver.FindAction("Brake", throwIfNotFound: true);
-        m_Driver_Throttle = m_Driver.FindAction("Throttle", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -227,16 +229,12 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     private List<IDriverActions> m_DriverActionsCallbackInterfaces = new List<IDriverActions>();
     private readonly InputAction m_Driver_Movement;
     private readonly InputAction m_Driver_Handbrake;
-    private readonly InputAction m_Driver_Brake;
-    private readonly InputAction m_Driver_Throttle;
     public struct DriverActions
     {
         private @InputActions m_Wrapper;
         public DriverActions(@InputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Driver_Movement;
         public InputAction @Handbrake => m_Wrapper.m_Driver_Handbrake;
-        public InputAction @Brake => m_Wrapper.m_Driver_Brake;
-        public InputAction @Throttle => m_Wrapper.m_Driver_Throttle;
         public InputActionMap Get() { return m_Wrapper.m_Driver; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -252,12 +250,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Handbrake.started += instance.OnHandbrake;
             @Handbrake.performed += instance.OnHandbrake;
             @Handbrake.canceled += instance.OnHandbrake;
-            @Brake.started += instance.OnBrake;
-            @Brake.performed += instance.OnBrake;
-            @Brake.canceled += instance.OnBrake;
-            @Throttle.started += instance.OnThrottle;
-            @Throttle.performed += instance.OnThrottle;
-            @Throttle.canceled += instance.OnThrottle;
         }
 
         private void UnregisterCallbacks(IDriverActions instance)
@@ -268,12 +260,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Handbrake.started -= instance.OnHandbrake;
             @Handbrake.performed -= instance.OnHandbrake;
             @Handbrake.canceled -= instance.OnHandbrake;
-            @Brake.started -= instance.OnBrake;
-            @Brake.performed -= instance.OnBrake;
-            @Brake.canceled -= instance.OnBrake;
-            @Throttle.started -= instance.OnThrottle;
-            @Throttle.performed -= instance.OnThrottle;
-            @Throttle.canceled -= instance.OnThrottle;
         }
 
         public void RemoveCallbacks(IDriverActions instance)
@@ -295,7 +281,5 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnHandbrake(InputAction.CallbackContext context);
-        void OnBrake(InputAction.CallbackContext context);
-        void OnThrottle(InputAction.CallbackContext context);
     }
 }
