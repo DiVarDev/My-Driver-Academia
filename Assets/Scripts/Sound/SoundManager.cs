@@ -12,23 +12,20 @@ public class SoundManager : MonoBehaviour
     [Header("Current Scene Information")]
     public int sceneIndex;
     public string sceneName;
-    [Header("Music Information")]
-    public List<AudioClip> musicMenuList;
-    public List<AudioClip> musicLoseMenuList;
-    public List<AudioClip> musicWinMenuList;
-    public List<AudioClip> musicLightForestList;
-    public List<AudioClip> musicDarkForestList;
-    public List<AudioClip> musicDungeonList;
-    public List<AudioClip> musicListSelected;
+
+    [Header("Music Manager Information")]
+    public MusicManager musicManager;
     public int musicListCount;
     public int currentTrackSelected;
     public string currentSong;
     public float songLenght;
+
     [Header("Music Audio Source")]
-    public AudioSource musicMudioSource;
+    public AudioSource musicAudioSource;
     [Range(0.0f, 1.0f)]
     public float volume;
     public float audioSourcePlaytime;
+
     [Header("Music Player Components")]
     public GameObject musicPlayerPanel;
     public MusicPlayer musicPlayer;
@@ -38,54 +35,25 @@ public class SoundManager : MonoBehaviour
     {
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
         sceneName = SceneManager.GetActiveScene().name;
-        switch (sceneIndex)
-        {
-            case 0:
-                musicListSelected = musicMenuList;
-                musicMudioSource = transform.Find("Music Menu").GetComponent<AudioSource>();
-                break;
 
-            case 1:
-                musicListSelected = musicLightForestList;
-                musicMudioSource = transform.Find("Music Game").GetComponent<AudioSource>();
-                break;
+        musicManager = GetComponent<MusicManager>();
+        musicAudioSource = GetComponent<AudioSource>();
 
-            case 2:
-                musicListSelected = musicDarkForestList;
-                musicMudioSource = transform.Find("Music Game").GetComponent<AudioSource>();
-                break;
-
-            case 3:
-                musicListSelected = musicDungeonList;
-                musicMudioSource = transform.Find("Music Game").GetComponent<AudioSource>();
-                break;
-
-            case 4:
-                musicListSelected = musicLoseMenuList;
-                musicMudioSource = transform.Find("Music Menu").GetComponent<AudioSource>();
-                break;
-
-            case 5:
-                musicListSelected = musicWinMenuList;
-                musicMudioSource = transform.Find("Music Menu").GetComponent<AudioSource>();
-                break;
-        }
-
-        currentTrackSelected = musicListSelected.IndexOf(musicListSelected.First());
-        musicListCount = musicListSelected.Count - 1;
+        //currentTrackSelected = musicManager.musicList.IndexOf(musicManager.musicList.First());
+        //musicListCount = musicManager.musicList.Count - 1;
 
         volume = 0.5f;
 
-        musicMudioSource.clip = musicListSelected.ElementAt(currentTrackSelected);
-        currentSong = musicMudioSource.clip.name;
-        songLenght = musicMudioSource.clip.length;
+        //musicAudioSource.clip = musicManager.musicList.ElementAt(currentTrackSelected);
+        currentSong = musicAudioSource.clip.name;
+        songLenght = musicAudioSource.clip.length;
 
         //try
-        {
+        /*{
             musicPlayerPanel = GameObject.Find("Canvas").transform.Find("Music Player Panel").gameObject;
             musicPlayer = musicPlayerPanel.GetComponent<MusicPlayer>();
-            musicPlayer.SetMusicPlayer(musicMudioSource.clip.name, musicMudioSource.clip.length);
-        }
+            musicPlayer.SetMusicPlayer(musicAudioSource.clip.name, musicAudioSource.clip.length);
+        }*/
         /*catch (NullReferenceException ex)
         {
             Debug.LogError($"Error finding Music Player Panel: {ex.Message}.");
@@ -100,12 +68,12 @@ public class SoundManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        musicMudioSource.volume = volume;
-        audioSourcePlaytime = musicMudioSource.time;
-        if (musicPlayerPanel != null)
+        musicAudioSource.volume = volume;
+        audioSourcePlaytime = musicAudioSource.time;
+        /*if (musicPlayerPanel != null)
         {
-            musicPlayer.MusicProgressBar(audioSourcePlaytime, musicMudioSource.clip.length);
-        }
+            musicPlayer.MusicProgressBar(audioSourcePlaytime, musicAudioSource.clip.length);
+        }*/
         if (audioSourcePlaytime >= songLenght)
         {
             StopMusic();
@@ -120,28 +88,28 @@ public class SoundManager : MonoBehaviour
     // Functions
     public void NextTrack()
     {
-        if (currentTrackSelected < musicListSelected.Count - 1)
+        /*if (currentTrackSelected < musicManager.musicList.Count - 1)
         {
             currentTrackSelected++;
         }
-        else if (currentTrackSelected >= musicListSelected.Count - 1)
+        else if (currentTrackSelected >= musicManager.musicList.Count - 1)
         {
-            currentTrackSelected = musicListSelected.IndexOf(musicListSelected.First());
+            currentTrackSelected = musicManager.musicList.IndexOf(musicManager.musicList.First());
         }
-        musicMudioSource.clip = musicListSelected.ElementAt(currentTrackSelected);
-        currentSong = musicMudioSource.clip.name;
-        songLenght = musicMudioSource.clip.length;
-        if (musicPlayerPanel != null)
+        musicAudioSource.clip = musicManager.musicList.ElementAt(currentTrackSelected);
+        currentSong = musicAudioSource.clip.name;
+        songLenght = musicAudioSource.clip.length;*/
+        /*if (musicPlayerPanel != null)
         {
-            musicPlayer.SetMusicPlayer(musicMudioSource.clip.name, musicMudioSource.clip.length);
-        }
+            musicPlayer.SetMusicPlayer(musicAudioSource.clip.name, musicAudioSource.clip.length);
+        }*/
     }
 
     public void PlayMusic()
     {
-        if (musicMudioSource.clip != null)
+        if (musicAudioSource.clip != null)
         {
-            musicMudioSource.Play();
+            musicAudioSource.Play();
         }
         else
         {
@@ -151,9 +119,9 @@ public class SoundManager : MonoBehaviour
 
     public void PauseMusic()
     {
-        if (musicMudioSource.clip != null)
+        if (musicAudioSource.clip != null)
         {
-            musicMudioSource.Pause();
+            musicAudioSource.Pause();
         }
         else
         {
@@ -163,9 +131,9 @@ public class SoundManager : MonoBehaviour
 
     public void StopMusic()
     {
-        if (musicMudioSource.clip != null)
+        if (musicAudioSource.clip != null)
         {
-            musicMudioSource.Stop();
+            musicAudioSource.Stop();
         }
         else
         {

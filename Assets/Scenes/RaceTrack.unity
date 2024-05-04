@@ -133,8 +133,9 @@ GameObject:
   m_Component:
   - component: {fileID: 49810524}
   - component: {fileID: 49810523}
+  - component: {fileID: 49810525}
   m_Layer: 0
-  m_Name: Music
+  m_Name: Music Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151,7 +152,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -251,6 +252,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &49810525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49810522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 625981b3ca75c904b9de795c419f1440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playMusic: 1
+  muteToggle: {fileID: 0}
+  musicList:
+  - {fileID: 8300000, guid: 2fdb5e5234aed524db6de278c0292b0c, type: 3}
+  - {fileID: 8300000, guid: 38b4ab676c0bd2d4eaf4357e356fba76, type: 3}
+  - {fileID: 8300000, guid: 177f5a1f60feca3409e50631ddefab6e, type: 3}
+  - {fileID: 8300000, guid: 4da7d40eb3493e940b5083e555324a10, type: 3}
+  - {fileID: 8300000, guid: 33acd9309a982cd4c9c86bf6f1f9ded3, type: 3}
+  - {fileID: 8300000, guid: 014ea8c9d928ff7479f91bf490cfed86, type: 3}
+  - {fileID: 8300000, guid: 309ba4a3284a163439abd12d7ec78748, type: 3}
+  - {fileID: 8300000, guid: 38f059181518d4f4e97455114bf633a0, type: 3}
+  - {fileID: 8300000, guid: 8425f30344f952f46b081d2bb58c6563, type: 3}
+  - {fileID: 8300000, guid: 718ce4de4b4444043ba5821ea58d78e2, type: 3}
+  - {fileID: 8300000, guid: 42923bba729e0e545a8ebfb95c53c78f, type: 3}
+  - {fileID: 8300000, guid: 2cc7de96759f62848894599c511d1d99, type: 3}
+  musicListCount: 0
+  currentTrackSelectedNumber: 0
+  currentTrackName: 
+  trackLength: 0
+  musicAudioSource: {fileID: 0}
+  volume: 0.5
+  audioSourcePlaytime: 0
 --- !u!1 &185559746
 GameObject:
   m_ObjectHideFlags: 0
