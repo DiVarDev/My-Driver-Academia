@@ -148,7 +148,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""4e00dc5d-ba61-4a3e-99e9-94813da91296"",
+                    ""id"": ""d7dcb097-6778-4c55-b8c2-ed00e786ab5e"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",

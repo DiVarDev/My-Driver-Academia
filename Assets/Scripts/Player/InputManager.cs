@@ -10,21 +10,23 @@ public class InputManager : MonoBehaviour
     private InputActions input;
     private InputActions.DriverActions driver;
 
-    private CarMovement carMovement;
-
+    private PrometeoCarController carController;
+    private bool brake;
     void Awake()
     {
         input = new InputActions();
         driver = input.Driver;
-        carMovement = GetComponent<CarMovement>();
+        carController = GetComponent<PrometeoCarController>();
 
-        //driverActions.Throttle.performed += ctx => carMovement.Accelerate();
-
+        driver.Handbrake.performed += ctx => brake = true;
+        driver.Handbrake.canceled += ctx => brake = false;
+        //driver.Handbrake.triggered += ctx => carController.BrakingCar(driver.Handbrake.ReadValue<float>());
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        brake = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -39,8 +41,10 @@ public class InputManager : MonoBehaviour
     void FixedUpdate()
     {
         // Will tell the CarMovement to move using the value from the movement action on MyInputActions
-        carMovement.Accelerate(driver.Movement.ReadValue<Vector2>());
-        carMovement.TurnWheels(driver.Movement.ReadValue<Vector2>());
+        carController.GoForwardAndBackwards(driver.Movement.ReadValue<Vector2>());
+        carController.TurningWheels(driver.Movement.ReadValue<Vector2>());
+        carController.CarSlowingDown();
+        CarBraking();
     }
 
     void LateUpdate()
@@ -56,5 +60,18 @@ public class InputManager : MonoBehaviour
     void OnDisable()
     {
         driver.Disable();
+    }
+
+    // Functions
+    public void CarBraking()
+    {
+        if (brake)
+        {
+            carController.BrakingCar(1.0f);
+        }
+        else
+        {
+            carController.BrakingCar(0.0f);
+        }
     }
 }

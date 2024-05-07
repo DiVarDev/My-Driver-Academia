@@ -6,6 +6,7 @@ public class CameraBehavior : MonoBehaviour
 {
     // Variables 
     [SerializeField] private Transform playerTransform; // Player transform component
+    [Range(0.1f, 1f)]
     [SerializeField] private float smoothingSpeed = 0.125f;  // Camera follow movements smoothing
     [SerializeField] private Vector3 offsetPosition = new Vector3(0.0f, 6.0f, -5.0f);   // Camera position offset values
     [SerializeField] private Vector3 offsetRotation = new Vector3(35.0f, 0.0f, 0.0f);   // Camera rotation offset values

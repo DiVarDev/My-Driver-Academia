@@ -11,6 +11,7 @@ public class MusicManager : MonoBehaviour
     [Header("Manager Variables")]
     public bool playMusic = true;
     public GameObject muteToggle;
+    public bool isListRandomized = false;
 
     [Header("Music List ")]
     public List<AudioClip> musicList;
@@ -22,21 +23,24 @@ public class MusicManager : MonoBehaviour
     [Header("Music Audio Source")]
     public AudioSource musicAudioSource;
     [Range(0.0f, 1.0f)]
-    public float volume = 0.5f;
-    public float audioSourcePlaytime;
+    public float volumeMusic = 0.5f;
+    public float musicAudioSourcePlaytime;
 
     // Start is called before the first frame update
     void Start()
     {
         // Randomize list function call
-        RandomizeList();
+        if (isListRandomized)
+        {
+            RandomizeList();
+        }
 
         currentTrackSelectedNumber = musicList.IndexOf(musicList.First());
         musicListCount = musicList.Count - 1;
 
         // Audio Source Component
         musicAudioSource = GetComponent<AudioSource>();
-        musicAudioSource.volume = volume;
+        musicAudioSource.volume = volumeMusic;
         musicAudioSource.clip = musicList.ElementAt(currentTrackSelectedNumber);
         // Getting the state of the mute toggle
         if (muteToggle != null)
@@ -65,14 +69,14 @@ public class MusicManager : MonoBehaviour
         }
 
         // Setting Audio Source Volume
-        if (volume != musicAudioSource.volume)
+        if (volumeMusic != musicAudioSource.volume)
         {
-            musicAudioSource.volume = volume;
+            musicAudioSource.volume = volumeMusic;
         }
         // Update Audio Source playtime in the global variable exposed to the inspector
-        audioSourcePlaytime = musicAudioSource.time;
+        musicAudioSourcePlaytime = musicAudioSource.time;
         // Check if the track is still playing or it finished
-        if (audioSourcePlaytime >= trackLength)
+        if (musicAudioSourcePlaytime >= trackLength)
         {
             StopMusic();
             NextTrack();
