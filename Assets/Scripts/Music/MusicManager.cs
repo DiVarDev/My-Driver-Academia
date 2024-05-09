@@ -11,6 +11,7 @@ public class MusicManager : MonoBehaviour
     [Header("Manager Variables")]
     public bool playMusic = true;
     public GameObject muteToggle;
+    public bool isAudioSourceMuted;
     public bool isListRandomized = false;
 
     [Header("Music List ")]
@@ -42,11 +43,6 @@ public class MusicManager : MonoBehaviour
         musicAudioSource = GetComponent<AudioSource>();
         musicAudioSource.volume = volumeMusic;
         musicAudioSource.clip = musicList.ElementAt(currentTrackSelectedNumber);
-        // Getting the state of the mute toggle
-        if (muteToggle != null)
-        {
-            musicAudioSource.mute = muteToggle.GetComponent<MuteToggle>().isToggleOn;
-        }
 
         // Inspector info loading
         currentTrackName = musicAudioSource.clip.name;
@@ -62,12 +58,6 @@ public class MusicManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Controlling the mute of musicAudioSource
-        if (muteToggle != null)
-        {
-            musicAudioSource.mute = muteToggle.GetComponent<MuteToggle>().isToggleOn;
-        }
-
         // Setting Audio Source Volume
         if (volumeMusic != musicAudioSource.volume)
         {
@@ -108,6 +98,7 @@ public class MusicManager : MonoBehaviour
         if (musicAudioSource.clip != null)
         {
             musicAudioSource.Play();
+            Debug.Log("Audio Source Clip is playing!");
         }
         else
         {
@@ -120,6 +111,7 @@ public class MusicManager : MonoBehaviour
         if (musicAudioSource.clip != null)
         {
             musicAudioSource.Pause();
+            Debug.Log("Audio Source Clip is paused!");
         }
         else
         {
@@ -132,6 +124,7 @@ public class MusicManager : MonoBehaviour
         if (musicAudioSource.clip != null)
         {
             musicAudioSource.Stop();
+            Debug.Log("Audio Source Clip is stopped!");
         }
         else
         {

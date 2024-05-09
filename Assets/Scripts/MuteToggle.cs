@@ -9,24 +9,32 @@ public class MuteToggle : MonoBehaviour
     // Variables
     public UnityEngine.UI.Toggle toggle;
     public bool isToggleOn;
+    public MusicManager musicManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        toggle = GetComponent<UnityEngine.UI.Toggle>();
-
-        isToggleOn = toggle.isOn;
+        toggle = GetComponent<UnityEngine.UI.Toggle>();;
     }
 
     // Update is called once per frame
     void Update()
     {
-        UpdateToggleOnBool();
+        
     }
 
     // Functions
-    private void UpdateToggleOnBool()
+    public void UpdateToggleOnBool()
     {
         isToggleOn = toggle.isOn;
+        musicManager.musicAudioSource.mute = isToggleOn;
+        if (isToggleOn)
+        {
+            musicManager.PauseMusic();
+        }
+        else
+        {
+            musicManager.PlayMusic();
+        }
     }
 }
