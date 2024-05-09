@@ -9,17 +9,21 @@ public class InputManager : MonoBehaviour
     // Variables
     private InputActions input;
     private InputActions.DriverActions driver;
-
+    
     private PrometeoCarController carController;
+    private CarStats carStats;
     private bool brake;
+
     void Awake()
     {
         input = new InputActions();
         driver = input.Driver;
         carController = GetComponent<PrometeoCarController>();
+        carStats = GetComponent<CarStats>();
 
         driver.Handbrake.performed += ctx => brake = true;
         driver.Handbrake.canceled += ctx => brake = false;
+        driver.Reset.performed += ctx => carStats.ResetCarPosition();
         //driver.Handbrake.triggered += ctx => carController.BrakingCar(driver.Handbrake.ReadValue<float>());
     }
 

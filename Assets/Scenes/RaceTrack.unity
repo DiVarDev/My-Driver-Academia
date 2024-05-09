@@ -785,6 +785,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playMusic: 1
   muteToggle: {fileID: 0}
+  isAudioSourceMuted: 0
   isListRandomized: 1
   musicList:
   - {fileID: 8300000, guid: 2fdb5e5234aed524db6de278c0292b0c, type: 3}
@@ -30431,11 +30432,18 @@ MonoBehaviour:
   fuelTank: 100
   fuelCanister: 4
   barrelFuelLoss: 2
+  checkpointResetCarPosition: {x: 0, y: 0, z: 0}
+  yOffset: 2.5
+  checkpointResetCarRotation: {x: 0, y: 0, z: 0, w: 0}
   soundManagerAudioSource: {fileID: 1471470124}
   hitFuelCanSound: {fileID: 8300000, guid: 89b1c12812cd798419fa7ea99d54ebda, type: 3}
+  hitFuelCanVolume: 0.75
   hitBarrelSound: {fileID: 8300000, guid: 96c901bc528008149bd22dccb30d028c, type: 3}
-  triggeredCheckpoint: {fileID: 8300000, guid: f0b95a74a56101d4c97a0e517c45b317, type: 3}
-  triggeredFinalCheckpoint: {fileID: 8300000, guid: 5625d2dfa60be7848a84137828129860, type: 3}
+  hitBarrelVolume: 0.25
+  triggeredCheckpointSound: {fileID: 8300000, guid: f0b95a74a56101d4c97a0e517c45b317, type: 3}
+  triggeredCheckpointVolume: 1
+  triggeredFinalCheckpointSound: {fileID: 8300000, guid: 5625d2dfa60be7848a84137828129860, type: 3}
+  triggeredFinalCheckpointVolume: 1
 --- !u!4 &5534550324919241258
 Transform:
   m_ObjectHideFlags: 0

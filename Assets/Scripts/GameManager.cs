@@ -104,12 +104,12 @@ public class GameManager : MonoBehaviour
     {
         if (lapsDone == maxLaps)
         {
-            soundManagerAudioSource.PlayOneShot(car.GetComponent<CarStats>().triggeredFinalCheckpoint);
+            soundManagerAudioSource.PlayOneShot(car.GetComponent<CarStats>().triggeredFinalCheckpointSound, car.GetComponent<CarStats>().triggeredFinalCheckpointVolume);
             StartCoroutine(CountdownSeparationCamera());
         }
         else
         {
-            soundManagerAudioSource.PlayOneShot(car.GetComponent<CarStats>().triggeredCheckpoint);
+            soundManagerAudioSource.PlayOneShot(car.GetComponent<CarStats>().triggeredCheckpointSound, car.GetComponent<CarStats>().triggeredCheckpointVolume);
         }
     }
 

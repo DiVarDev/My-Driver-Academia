@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Fuel
   - Barrel
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
