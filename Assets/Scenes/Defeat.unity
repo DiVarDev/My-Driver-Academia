@@ -1819,9 +1819,6 @@ MonoBehaviour:
   isListRandomized: 1
   musicList:
   - {fileID: 8300000, guid: 023077972cb017442a2c946f249c8261, type: 3}
-  - {fileID: 8300000, guid: 0a9a2dfb556791546902a57bcb1ba308, type: 3}
-  - {fileID: 8300000, guid: dd184583643a6e241bae86736c87e6d2, type: 3}
-  - {fileID: 8300000, guid: 7507199554d32ce4c9be9f4c9f9a583a, type: 3}
   - {fileID: 8300000, guid: b05ff718e622653439cfc770e7ffc304, type: 3}
   musicListCount: 0
   currentTrackSelectedNumber: 0

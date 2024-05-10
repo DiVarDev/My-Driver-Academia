@@ -1960,9 +1960,8 @@ MonoBehaviour:
   playMusic: 1
   muteToggle: {fileID: 1914864619}
   isAudioSourceMuted: 0
-  isListRandomized: 1
+  isListRandomized: 0
   musicList:
-  - {fileID: 8300000, guid: 21d4c3e8c57a92949877187061591d24, type: 3}
   - {fileID: 8300000, guid: 4025d9a2522b8ff4aa6c2f89e0ca7edc, type: 3}
   musicListCount: 0
   currentTrackSelectedNumber: 0

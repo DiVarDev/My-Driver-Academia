@@ -1904,12 +1904,9 @@ MonoBehaviour:
   isAudioSourceMuted: 0
   isListRandomized: 1
   musicList:
-  - {fileID: 8300000, guid: 54a302ee640be0b47b599a4f54c8756f, type: 3}
-  - {fileID: 8300000, guid: e63ec9f9e3f69a3489c17d4f1681c905, type: 3}
   - {fileID: 8300000, guid: 27274af0c3a2f9d4e96614c0345efacc, type: 3}
   - {fileID: 8300000, guid: 8fad1e42a702313448f7602f95432821, type: 3}
   - {fileID: 8300000, guid: 4dcccc1c52e421641932143ed651a92a, type: 3}
-  - {fileID: 8300000, guid: 5b5fe449d473cda4392efb13d67e5590, type: 3}
   musicListCount: 0
   currentTrackSelectedNumber: 0
   currentTrackName: 

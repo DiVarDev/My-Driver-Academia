@@ -790,18 +790,13 @@ MonoBehaviour:
   musicList:
   - {fileID: 8300000, guid: 2ee9614693c15ef4d8eedfee008b1474, type: 3}
   - {fileID: 8300000, guid: db0e28975c0365f40a54e95d627f08e3, type: 3}
-  - {fileID: 8300000, guid: 7914d189122ffdf4cb2787b545d07b30, type: 3}
   - {fileID: 8300000, guid: d0c6f69a6fef1af4e8d7ba71ca074dca, type: 3}
-  - {fileID: 8300000, guid: 6d5c951eab16f8a47b1e24853f49e67d, type: 3}
   - {fileID: 8300000, guid: 95a844389b79d514b93118dee715bb9d, type: 3}
   - {fileID: 8300000, guid: 1f5ba107ac89e984bb123305c591b232, type: 3}
-  - {fileID: 8300000, guid: fba565983a1fcca4db8246455370653d, type: 3}
   - {fileID: 8300000, guid: 8c61f6818b8e4ec4bbd024e063abd055, type: 3}
   - {fileID: 8300000, guid: c93993a499a04a748b293d1c910cc026, type: 3}
-  - {fileID: 8300000, guid: 4027481117fe9d74499c1e6fb1c5bbf6, type: 3}
   - {fileID: 8300000, guid: 87ccb9380b63ad544b4761aa4f205b11, type: 3}
   - {fileID: 8300000, guid: a6fe1f4856e4dd54085d11bb3b4e3fa4, type: 3}
-  - {fileID: 8300000, guid: 22c4abdd567698f48b773c33e36f6018, type: 3}
   musicListCount: 0
   currentTrackSelectedNumber: 0
   currentTrackName: 
@@ -30381,7 +30376,7 @@ MonoBehaviour:
   maxSpeed: 150
   maxReverseSpeed: 45
   accelerationMultiplier: 10
-  maxSteeringAngle: 25
+  maxSteeringAngle: 26
   steeringSpeed: 0.5
   brakeForce: 350
   decelerationMultiplier: 2
