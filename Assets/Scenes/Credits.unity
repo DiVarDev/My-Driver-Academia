@@ -1676,7 +1676,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Prometeo Car\r\n\tCar Engine\r\n\tTrie Screech\r\nMinecraft\r\n\tRandom\r\n\t\tOrb\r\n\t\tAnvil_Land\r\n\t\tPortal\r\n\tUI\r\n\t\tChallenge_Complete\r"
+  m_text: "Prometeo Car\r\n\tCar Engine\r\n\tTrie Screech\r\nMinecraft\r\r\n\tOrb\r\n\tAnvil_Land\r\n\tPortal\r\n\tChallenge_Complete\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
