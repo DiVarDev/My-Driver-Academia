@@ -788,20 +788,20 @@ MonoBehaviour:
   isAudioSourceMuted: 0
   isListRandomized: 1
   musicList:
-  - {fileID: 8300000, guid: 2fdb5e5234aed524db6de278c0292b0c, type: 3}
-  - {fileID: 8300000, guid: 38b4ab676c0bd2d4eaf4357e356fba76, type: 3}
-  - {fileID: 8300000, guid: 177f5a1f60feca3409e50631ddefab6e, type: 3}
-  - {fileID: 8300000, guid: 4da7d40eb3493e940b5083e555324a10, type: 3}
-  - {fileID: 8300000, guid: 33acd9309a982cd4c9c86bf6f1f9ded3, type: 3}
-  - {fileID: 8300000, guid: 014ea8c9d928ff7479f91bf490cfed86, type: 3}
-  - {fileID: 8300000, guid: 309ba4a3284a163439abd12d7ec78748, type: 3}
-  - {fileID: 8300000, guid: 38f059181518d4f4e97455114bf633a0, type: 3}
-  - {fileID: 8300000, guid: 8425f30344f952f46b081d2bb58c6563, type: 3}
-  - {fileID: 8300000, guid: 718ce4de4b4444043ba5821ea58d78e2, type: 3}
-  - {fileID: 8300000, guid: 42923bba729e0e545a8ebfb95c53c78f, type: 3}
-  - {fileID: 8300000, guid: 2cc7de96759f62848894599c511d1d99, type: 3}
-  - {fileID: 8300000, guid: 2b3f1fbac2321cd4b93c9e69a74610f4, type: 3}
-  - {fileID: 8300000, guid: e4a15ef866045454ca3c761d5e210828, type: 3}
+  - {fileID: 8300000, guid: 2ee9614693c15ef4d8eedfee008b1474, type: 3}
+  - {fileID: 8300000, guid: db0e28975c0365f40a54e95d627f08e3, type: 3}
+  - {fileID: 8300000, guid: 7914d189122ffdf4cb2787b545d07b30, type: 3}
+  - {fileID: 8300000, guid: d0c6f69a6fef1af4e8d7ba71ca074dca, type: 3}
+  - {fileID: 8300000, guid: 6d5c951eab16f8a47b1e24853f49e67d, type: 3}
+  - {fileID: 8300000, guid: 95a844389b79d514b93118dee715bb9d, type: 3}
+  - {fileID: 8300000, guid: 1f5ba107ac89e984bb123305c591b232, type: 3}
+  - {fileID: 8300000, guid: fba565983a1fcca4db8246455370653d, type: 3}
+  - {fileID: 8300000, guid: 8c61f6818b8e4ec4bbd024e063abd055, type: 3}
+  - {fileID: 8300000, guid: c93993a499a04a748b293d1c910cc026, type: 3}
+  - {fileID: 8300000, guid: 4027481117fe9d74499c1e6fb1c5bbf6, type: 3}
+  - {fileID: 8300000, guid: 87ccb9380b63ad544b4761aa4f205b11, type: 3}
+  - {fileID: 8300000, guid: a6fe1f4856e4dd54085d11bb3b4e3fa4, type: 3}
+  - {fileID: 8300000, guid: 22c4abdd567698f48b773c33e36f6018, type: 3}
   musicListCount: 0
   currentTrackSelectedNumber: 0
   currentTrackName: 
@@ -30381,7 +30381,7 @@ MonoBehaviour:
   maxSpeed: 150
   maxReverseSpeed: 45
   accelerationMultiplier: 10
-  maxSteeringAngle: 27
+  maxSteeringAngle: 25
   steeringSpeed: 0.5
   brakeForce: 350
   decelerationMultiplier: 2

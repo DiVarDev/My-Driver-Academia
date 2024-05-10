@@ -1962,8 +1962,8 @@ MonoBehaviour:
   isAudioSourceMuted: 0
   isListRandomized: 1
   musicList:
-  - {fileID: 8300000, guid: 17a8bc75bc87900438e807be6a3f1f56, type: 3}
-  - {fileID: 8300000, guid: 51e818eb12818b0468df379a9e03a091, type: 3}
+  - {fileID: 8300000, guid: 21d4c3e8c57a92949877187061591d24, type: 3}
+  - {fileID: 8300000, guid: 4025d9a2522b8ff4aa6c2f89e0ca7edc, type: 3}
   musicListCount: 0
   currentTrackSelectedNumber: 0
   currentTrackName: 
